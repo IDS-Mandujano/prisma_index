@@ -8,16 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
             --bg-color: #ffffff;
             --text-color: #1a1a1a;
-            --text-muted: #666666;
-            --accent-color: #2563eb;
-            --section-bg: #f9fafb;
+            --text-muted: #4b5563;
+            --accent-color: #0284c7;
+            --section-bg: #f8fafc;
+            --dark-bg: #0f172a;
             --transition: all 0.3s ease;
         }
 
@@ -43,168 +43,347 @@
             color: inherit;
         }
 
+        /* NAVEGACIÓN */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 5%;
+            padding: 1.5rem 5%;
             background-color: var(--bg-color);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #eaeaea;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
         }
 
-        .logo span {
-            color: var(--accent-color);
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
 
         nav a {
             margin-left: 2rem;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: var(--transition);
+            color: var(--text-muted);
         }
 
         nav a:hover {
             color: var(--accent-color);
         }
 
+        .btn-nav {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            margin-left: 2rem;
+        }
+        
+        .btn-nav:hover {
+            background-color: #0369a1;
+            color: white;
+        }
+
+        /* SECCIÓN PRINCIPAL (HERO) */
         .hero {
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 5%;
+            background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 800;
-            max-width: 800px;
+            max-width: 900px;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
+            color: var(--dark-bg);
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 600px;
+            max-width: 700px;
             margin-bottom: 2.5rem;
-            font-weight: 300;
         }
 
         .btn {
-            background-color: var(--text-color);
+            background-color: var(--dark-bg);
             color: var(--bg-color);
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: 5px;
             font-weight: 600;
+            font-size: 1.1rem;
             transition: var(--transition);
-            border: 2px solid var(--text-color);
+            border: 2px solid var(--dark-bg);
         }
 
         .btn:hover {
             background-color: transparent;
-            color: var(--text-color);
+            color: var(--dark-bg);
         }
 
+        /* TÍTULOS DE SECCIÓN */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-bg);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* NOSOTROS */
+        .about {
+            padding: 6rem 5%;
+            background-color: var(--bg-color);
+        }
+
+        .about-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* SERVICIOS */
         .services {
             background-color: var(--section-bg);
-            padding: 5rem 5%;
-            text-align: center;
+            padding: 8rem 5%;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .service-card {
             background: var(--bg-color);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #eaeaea;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
             transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--accent-color);
         }
 
         .service-card i {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--accent-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            background: #e0f2fe;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
         }
 
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* TECNOLOGÍAS (CARRUSEL INFINITO) */
+        .tech-section {
+            padding: 5rem 0; /* Quitamos el padding lateral para que cruce de punta a punta */
+            background-color: var(--dark-bg);
+            text-align: center;
+            overflow: hidden; /* Esto oculta lo que se sale de la pantalla */
+        }
+
+        .tech-section h3 {
+            color: #94a3b8;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+            padding: 0 5%; /* Añadimos el padding aquí para el texto */
+        }
+
+        /* El contenedor que se desliza */
+        .tech-slider {
+            display: flex;
+            width: max-content;
+            animation: scroll-tech 30s linear infinite; /* 30s es la velocidad, ajusta a tu gusto */
+        }
+
+        /* Pausar al pasar el mouse */
+        .tech-slider:hover {
+            animation-play-state: paused;
+        }
+
+        /* Las "pistas" de logos */
+        .tech-track {
+            display: flex;
+            align-items: center;
+            gap: 5rem; /* Espacio entre logos */
+            padding-right: 5rem; /* Para que la repetición sea perfecta */
+        }
+
+        .tech-track i {
+            font-size: 3.5rem;
+            color: #64748b;
+            transition: var(--transition);
+        }
+
+        .tech-track i:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Animación CSS que mueve el contenedor */
+        @keyframes scroll-tech {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Se mueve la mitad exacta, creando el bucle perfecto */
+        }
+
+        /* PROYECTOS */
+        .projects {
+            padding: 8rem 5%;
+            background-color: var(--bg-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--section-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .project-card:hover {
+            background: var(--bg-color);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #e0f2fe;
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* CONTACTO */
         .contact {
             padding: 6rem 5%;
             text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact p {
-            color: var(--text-muted);
-            margin-bottom: 3rem;
+            background-color: var(--section-bg);
+            border-top: 1px solid #e2e8f0;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            background-color: var(--section-bg);
-            color: var(--text-color);
-            font-size: 1.8rem;
+            background-color: var(--bg-color);
+            color: var(--dark-bg);
+            font-size: 2rem;
             transition: var(--transition);
-            border: 1px solid #eaeaea;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        .social-links a.whatsapp:hover { background-color: #25D366; color: white; border-color: #25D366; }
-        .social-links a.facebook:hover { background-color: #1877F2; color: white; border-color: #1877F2; }
-        .social-links a.instagram:hover { background-color: #E1306C; color: white; border-color: #E1306C; }
-        .social-links a.github:hover { background-color: #333333; color: white; border-color: #333333; }
+        .social-links a.whatsapp:hover { background-color: #25D366; color: white; transform: translateY(-5px); }
+        .social-links a.facebook:hover { background-color: #1877F2; color: white; transform: translateY(-5px); }
+        .social-links a.instagram:hover { background-color: #E1306C; color: white; transform: translateY(-5px); }
+        .social-links a.github:hover { background-color: #333333; color: white; transform: translateY(-5px); }
 
         footer {
             text-align: center;
             padding: 2rem;
-            border-top: 1px solid #eaeaea;
             color: var(--text-muted);
             font-size: 0.9rem;
+            background-color: var(--bg-color);
         }
 
+        /* ANIMACIONES */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
@@ -213,69 +392,165 @@
             transform: translateY(0);
         }
 
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav a {
-                margin: 0 1rem;
-            }
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            header { flex-direction: column; gap: 1rem; padding: 1rem; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            nav a, .btn-nav { margin: 0; }
+            .about-content { grid-template-columns: 1fr; text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Prisma<span>Software</span></div>
+        <a href="#inicio" class="logo">
+            <img src="logo.svg" alt="Logo Prisma Software" />
+        </a>
         <nav>
             <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Acerca de</a>
             <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#proyectos">Portafolio</a>
+            <a href="#contacto" class="btn-nav">Cotizar Proyecto</a>
         </nav>
     </header>
 
     <section id="inicio" class="hero fade-in">
         <h1>Tú conoces tu negocio, nosotros la tecnología para hacerlo crecer.</h1>
-        <p>Soluciones de software a la medida, páginas web y digitalización de procesos de forma accesible y profesional.</p>
-        <a href="#contacto" class="btn">Impulsa tu negocio</a>
+        <p>Desarrollamos páginas web y sistemas a la medida para que tu negocio local venda más, se organice mejor y luzca 100% profesional en internet.</p>
+        <a href="#contacto" class="btn">Hablemos de tu idea</a>
+    </section>
+
+    <section id="nosotros" class="about">
+        <div class="about-content fade-in">
+            <div class="about-text">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--dark-bg); letter-spacing: -1px;">El socio tecnológico de tu negocio</h2>
+                <p>En <strong>Prisma Software</strong> sabemos que dirigir un negocio local es un desafío de todos los días. Nuestro objetivo no es hablarte con términos técnicos complicados, sino darte herramientas que realmente te sirvan.</p>
+                <p>Nos enfocamos en entender cómo funciona tu empresa para crear sistemas web y aplicaciones que te ahorren tiempo, eviten errores manuales y hagan que tus clientes confíen más en ti.</p>
+            </div>
+            <div style="background-color: var(--section-bg); padding: 3rem; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center;">
+                <i class="fa-solid fa-handshake" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Trato Directo y Transparente</h3>
+                <p style="color: var(--text-muted);">Calidad de agencia corporativa, con la atención cercana que un negocio local merece.</p>
+            </div>
+        </div>
     </section>
 
     <section id="servicios" class="services">
-        <h2 class="fade-in">Lo que hacemos</h2>
+        <div class="section-header fade-in">
+            <h2>¿Cómo podemos ayudarte?</h2>
+            <p>Soluciones claras y sin complicaciones para problemas reales.</p>
+        </div>
+        
         <div class="services-grid">
             <div class="service-card fade-in">
-                <i class="fa-solid fa-code"></i>
-                <h3>Software a la medida</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Sistemas diseñados específicamente para resolver los retos de tu operación diaria.</p>
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Sistemas a tu medida</h3>
+                <p>¿Cansado de usar libretas, perder notas o tener mil archivos de Excel? Te construimos un programa fácil de usar para controlar tu inventario, ventas o agenda desde cualquier computadora o celular.</p>
             </div>
+            
             <div class="service-card fade-in">
-                <i class="fa-solid fa-globe"></i>
-                <h3>Páginas Web</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Presencia digital moderna, rápida y optimizada para que tus clientes te encuentren.</p>
+                <i class="fa-solid fa-store"></i>
+                <h3>Páginas Web que venden</h3>
+                <p>Tu negocio abierto las 24 horas. Olvídate de páginas que nadie visita; creamos un sitio web rápido y atractivo para que tus clientes locales te encuentren en Google y te contacten al instante.</p>
             </div>
+            
             <div class="service-card fade-in">
-                <i class="fa-solid fa-chart-line"></i>
-                <h3>Digitalización</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Automatiza procesos manuales para ahorrar tiempo y reducir errores en tu negocio.</p>
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Automatización de Tareas</h3>
+                <p>Deja que la tecnología trabaje por ti. Hacemos que los recordatorios por WhatsApp, el envío de correos o los cobros a tus clientes se hagan de forma automática para que ahorres horas de trabajo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-section fade-in">
+        <h3>Tecnología de punta respaldando tu negocio</h3>
+        
+        <div class="tech-slider">
+            
+            <div class="tech-track">
+                <i class="fa-brands fa-html5" title="HTML5"></i>
+                <i class="fa-brands fa-css3-alt" title="CSS3"></i>
+                <i class="fa-brands fa-js" title="JavaScript"></i>
+                <i class="fa-brands fa-react" title="React"></i>
+                <i class="fa-brands fa-node-js" title="Node.js"></i>
+                <i class="fa-brands fa-python" title="Python"></i>
+                <i class="fa-brands fa-java" title="Java"></i>
+                <i class="fa-brands fa-php" title="PHP"></i>
+                <i class="fa-brands fa-laravel" title="Laravel"></i>
+                <i class="fa-brands fa-golang" title="Go"></i>
+                <i class="fa-brands fa-android" title="Kotlin / Android"></i>
+                <i class="fa-solid fa-fire" title="CodeIgniter"></i>
+            </div>
+
+            <div class="tech-track">
+                <i class="fa-brands fa-html5" title="HTML5"></i>
+                <i class="fa-brands fa-css3-alt" title="CSS3"></i>
+                <i class="fa-brands fa-js" title="JavaScript"></i>
+                <i class="fa-brands fa-react" title="React"></i>
+                <i class="fa-brands fa-node-js" title="Node.js"></i>
+                <i class="fa-brands fa-python" title="Python"></i>
+                <i class="fa-brands fa-java" title="Java"></i>
+                <i class="fa-brands fa-php" title="PHP"></i>
+                <i class="fa-brands fa-laravel" title="Laravel"></i>
+                <i class="fa-brands fa-golang" title="Go"></i>
+                <i class="fa-brands fa-android" title="Kotlin / Android"></i>
+                <i class="fa-solid fa-fire" title="CodeIgniter"></i>
+            </div>
+            
+        </div>
+    </section>
+    <section id="proyectos" class="projects">
+        <div class="section-header fade-in">
+            <h2>Nuestro Trabajo</h2>
+            <p>Ejemplos de cómo hemos transformado negocios locales.</p>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <h3>Punto de Venta Web</h3>
+                <p>Sistema diseñado para una cadena local de mini-supers. Permitió a los dueños ver las ventas de todas sus sucursales en tiempo real desde su celular, eliminando descuadres de caja.</p>
+                <div class="tech-tags">
+                    <span class="tag">Control de Inventario</span>
+                    <span class="tag">Reportes Web</span>
+                </div>
+            </div>
+            
+            <div class="project-card fade-in">
+                <h3>Tienda en Línea (E-Commerce)</h3>
+                <p>Plataforma para una boutique de ropa local. Integrada con pagos con tarjeta y cálculo automático de envíos, lo que les permitió empezar a vender a todo el estado 24/7.</p>
+                <div class="tech-tags">
+                    <span class="tag">Ventas Online</span>
+                    <span class="tag">Pagos Seguros</span>
+                </div>
+            </div>
+            
+            <div class="project-card fade-in">
+                <h3>Agenda Médica Inteligente</h3>
+                <p>Plataforma para clínicas dentales que organiza las citas y envía recordatorios automáticos por WhatsApp a los pacientes un día antes, reduciendo las cancelaciones a la mitad.</p>
+                <div class="tech-tags">
+                    <span class="tag">Gestión de Citas</span>
+                    <span class="tag">WhatsApp API</span>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contacto" class="contact fade-in">
-        <h2>¿Listo para dar el siguiente paso?</h2>
-        <p>Escríbenos por tu plataforma favorita y cuéntanos sobre tu proyecto.</p>
+        <h2 style="font-size: 2.5rem; color: var(--dark-bg); margin-bottom: 1rem;">Da el primer paso hacia la modernización</h2>
+        <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Escríbenos por tu red social favorita. La asesoría inicial es completamente gratuita y sin compromisos.</p>
         
-        <div class="social-links">
-            <a href="https://wa.me/529601162298" class="whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61574333853594" class="facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/prismasoftware2026/" class="instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://github.com/Prisma-SoftwareMx" class="github" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <div class="social-links fade-in">
+            <a href="https://wa.me/529601162298" class="whatsapp" target="_blank" title="Envíanos un WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61574333853594" class="facebook" target="_blank" title="Visita nuestro Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/prismasoftware2026/" class="instagram" target="_blank" title="Síguenos en Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/Prisma-SoftwareMx" class="github" target="_blank" title="Nuestro código en GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; <span id="year"></span> Prisma Software. Todos los derechos reservados.</p>
+        <p>&copy; <span id="year"></span> Prisma Software Consultores. Todos los derechos reservados.</p>
     </footer>
 
     <script>
